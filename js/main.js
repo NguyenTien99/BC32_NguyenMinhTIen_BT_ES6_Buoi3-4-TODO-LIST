@@ -38,10 +38,21 @@ function deleleComplete(taskID){
 
 // Xắp xếp
 document.getElementById("two").onclick = () =>{
-    taskList.sortDown()
-    console.log(taskList);
+    taskList.sorttaskDown();
     displayTask(taskList.tasks);
+
+    taskComplete.sorttaskDown();
+    displayComplete(taskComplete.tasks);
 }
+
+document.getElementById("three").onclick = ()=>{
+  taskList.sorttaskUp();
+    displayTask(taskList.tasks);
+
+    taskComplete.sorttaskUp();
+    displayComplete(taskComplete.tasks);
+}
+
 //========================
 function displayTask(taskList) {
   const html = taskList.reduce((result, task) => {

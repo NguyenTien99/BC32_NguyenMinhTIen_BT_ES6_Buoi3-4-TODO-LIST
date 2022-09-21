@@ -14,12 +14,20 @@ class TaskList{
     deleteTask(taskID){
         this.tasks = this.tasks.filter(task => task.task !== taskID);
     }
-    sortDown(){
-        this.tasks.sort((todo, nextTodo) => {
-            if (todo.id > nextTodo.id) {
-              return 1;
-            }
-            return -1;
-          });
-    }
+    sorttaskDown() {
+        this.tasks.sort((task, tasknext) => {
+          if (task.task > tasknext.task) {
+            return 1;
+          }
+          return -1;
+        });
+      }
+      sorttaskUp() {
+        this.tasks.sort((task, tasknext) => {
+          if (task.task < tasknext.task) {
+            return 1;
+          }
+          return -1;
+        });
+      }
 }
